@@ -7,3 +7,6 @@ all: ${EXE}
 
 clean:
 	@rm -rf _output
+
+fmt:
+	@go fmt ./cmd/${EXE}/*.go
