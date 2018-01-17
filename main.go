@@ -44,9 +44,10 @@ func main() {
 
 	config, err := readConfig("config.json")
 	if err != nil {
-		setLogger(config.LogFileName)
+		//Error management
 	}
 
+	setLogger(config.LogFileName)
 	router := NewRouter()
 
 	log.Fatal(http.ListenAndServe(":8080", router))
