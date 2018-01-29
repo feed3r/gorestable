@@ -47,7 +47,7 @@ func main() {
 
 	config, err := readConfig("config.json")
 	if err != nil {
-		//Error management
+		config.LogFileName = "GoRestable.log"
 	}
 
 	setLogger(config.LogFileName)
