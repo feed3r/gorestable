@@ -9,7 +9,7 @@ import (
 )
 
 type Configuration struct {
-	LogFileName string
+	LogFileName string `json:"logfile"`
 }
 
 func readConfig(configFile string) (Configuration, error) {
