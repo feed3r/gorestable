@@ -12,8 +12,10 @@ type Configuration struct {
 	LogFileName string `json:"logfile"`
 }
 
+//readConfig reads the configuration file passed as parameter.
+//Please note that the configFile parameter is the complete file path.
 func readConfig(configFile string) (Configuration, error) {
-	//filename is the path to the json config file
+
 	file, err := os.Open(configFile)
 	if err != nil {
 		return Configuration{}, err
@@ -28,8 +30,9 @@ func readConfig(configFile string) (Configuration, error) {
 	return configuration, nil
 }
 
+//setLogger function creates a new logger using the file passed as parameter as logfile.
+//Please note that the name parameter is the complete file path.
 func setLogger(name string) {
-	//creates a new log file with name as parameter
 
 	fileHandle, err := os.Create(name)
 	if err != nil {
